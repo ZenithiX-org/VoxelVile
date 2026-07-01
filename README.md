@@ -2,7 +2,6 @@
 
 A browser-based **3D voxel sandbox** (Minecraft clone) built with **Next.js 16**, **TypeScript**, **Three.js**, and **Tailwind CSS**.
 
-![VoxelVile](public/logo.svg)
 
 ## Features
 
@@ -39,43 +38,6 @@ A browser-based **3D voxel sandbox** (Minecraft clone) built with **Next.js 16**
 - **Drag on screen**: look around
 - **Tap hotbar**: select block
 - **World button** (top-right): save / load / new world
-
-## Getting Started (Local)
-
-```bash
-npm install
-npm run dev
-# Open http://localhost:3000
-```
-
-## Deploy to Netlify
-
-This project includes a `netlify.toml` configured for hassle-free deployment.
-
-### Steps
-1. Push this project to a GitHub/GitLab/Bitbucket repo
-2. In Netlify: **Add new site → Import an existing project**
-3. Select your repo — Netlify auto-detects the `netlify.toml` settings
-4. **Important** — verify these in the Netlify dashboard before deploying:
-   - **Site configuration → Build & deploy → Build settings**
-     - Build command: `npx next build`
-     - **Publish directory: `.next`** ← must be exactly this (not empty, not `/`, not `.`)
-   - **Site configuration → Environment variables**
-     - `NODE_VERSION` = `20`
-5. Click **Deploy**
-
-### Troubleshooting: "Publish directory pointing to base directory"
-If you get this error, it means the Netlify dashboard's Publish directory field is empty or set to the repo root, overriding the `netlify.toml`. Fix it:
-1. Go to **Site configuration → Build & deploy → Build settings → Edit settings**
-2. Set **Publish directory** to `.next`
-3. Save and trigger a new deploy
-
-### Why a plain `next build`?
-The default `package.json` build script in some scaffolds includes Docker-only `cp` commands that fail on Netlify. This project's `netlify.toml` overrides the build command to run a clean `npx next build`, and the `@netlify/plugin-nextjs` plugin handles SSR, routing, and the `.next` output.
-
-### Requirements
-- Node.js 20 (pinned via `netlify.toml`)
-- A WebGL-capable browser to view the app
 
 ## Project Structure
 
@@ -115,5 +77,3 @@ src/
 - **Persistence**: IndexedDB
 
 ---
-
-Built with ❤️ using Z.ai
