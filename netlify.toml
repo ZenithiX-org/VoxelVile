@@ -1,0 +1,18 @@
+# Netlify configuration for VoxelVile
+#
+# IMPORTANT: If the Netlify dashboard "Publish directory" field is set to
+# something other than ".next" (or empty), it will OVERRIDE this file and
+# cause the error: "Your publish directory is pointing to the base directory".
+# Fix: Site configuration → Build & deploy → Publish directory = .next
+
+[build]
+  command = "npx next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Required for Next.js on Netlify — handles SSR, routing, and .next output.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
